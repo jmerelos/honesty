@@ -1,2 +1,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.well {
+  background-color: #EDEDED;
+}
+
+.center {
+  text-align: center;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #d2d2d2;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 15px;
+}
