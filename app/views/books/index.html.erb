@@ -15,8 +15,10 @@
         <td><%= book.author.name %></td>
         <td>
 					<%= link_to "View", book_path(book) %>
-					<%= link_to "Edit", edit_book_path(book) %>
-					<%= link_to "Delete", book, method: :delete, data: {confirm: "Are you sure?"} %>
+          <% if logged_in? %>
+  					<%= link_to "Edit", edit_book_path(book) %>
+  					<%= link_to "Delete", book, method: :delete, data: {confirm: "Are you sure?"} %>
+            <% end %>
         </td>
       </tr>
     <% end %>  

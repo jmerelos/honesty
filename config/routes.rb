@@ -10,4 +10,8 @@ Rails.application.routes.draw do
 #  delete '/books/:id', to: 'books#destroy'
 
   resources :books
+
+  get '/login', to: 'logins#new'
+  post 'login', to: 'logins#create'
+  get '/logout', to: 'logins#destroy'
 end

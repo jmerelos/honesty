@@ -4,8 +4,10 @@
 	<hr/>
 </p>
 <div class="row">
-	<div class="col-md-8 well">	
+	<div class="well col-md-10 col-md-offset-1">	
 		<%= simple_format(@book.description) %>
 	</div>
 </div>
+<% if logged_in? %>
 <%= link_to "Edit this Book", edit_book_path(@book), class: "btn btn-success pull-right" %>
+<% end %>

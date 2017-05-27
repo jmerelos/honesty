@@ -1,6 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  padding-top: 80px;
+}
+
 .well {
   background-color: #EDEDED;
 }
@@ -18,4 +22,10 @@ input, textarea, select, .uneditable-input {
 
 input {
 	height: auto !important;
+}
+
+.nav_item {
+  margin-left: 25px;
+  float: left;
+  margin-top: 20px;
 }

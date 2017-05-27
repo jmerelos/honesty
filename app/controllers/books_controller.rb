@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+	before_action :require_user, except: [:show, :index]
+
 	def index
 		@books = Book.all
 	end

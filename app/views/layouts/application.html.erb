@@ -9,19 +9,7 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-default">
-      <ul class="nav navbar-nav">
-        <li>
-          <%= link_to "Home", home_path %>
-        </li>
-        <li>
-          <%= link_to "Books Listing", books_path %>
-        </li>
-        <li>
-          <%= link_to "Add Book", new_book_path %>
-        </li>
-      </ul>
-    </nav>
+    <%= render 'layouts/navigation' %>
 
    <div class="container">
       <%= render 'layouts/messages' %>
