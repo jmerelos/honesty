@@ -1,0 +1,14 @@
+<%= render 'shared/errors', obj: @book %>
+<div class="row">
+	<div class="well col-md-8 col-md-offset-2">
+		<%= form_for @book do |f| %>
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+
+			<%= f.label :description %>
+			<%= f.text_area :description, rows: 10 %>
+
+			<%= f.submit(@book.new_record? ? 'Create Book' : 'Edit Book', class: "btn btn-success") %>
+		<% end %>	
+	</div>
+</div>

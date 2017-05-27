@@ -4,7 +4,8 @@
 	<hr/>
 </p>
 <div class="row">
-	<div class="col-md-8">
-		<p class="well"><%= @book.description %></p>
+	<div class="col-md-8 well">	
+		<%= simple_format(@book.description) %>
 	</div>
 </div>
+<%= link_to "Edit this Book", edit_book_path(@book), class: "btn btn-success pull-right" %>

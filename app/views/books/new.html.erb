@@ -1,20 +1,2 @@
-<p>
-	<h1 class="center">Add Book</h1>
-	<hr/>
-</p>
-<div class="row">
-	<div class="well col-md-8 col-md-offset-2">
-		<%= form_for @book do |f| %>
-			<%= f.label :name %>
-			<%= f.text_field :name %>
-
-			<%= f.label :description %>
-			<%= f.text_area :description, rows: 10 %>
-
-			<%= f.label :author %>
-			<%= f.text_field :author %>		
-			
-			<%= f.submit 'Add Book', class:"btn btn-success" %>	
-		<% end %>	
-	</div>
-</div>
+<%= render 'shared/page_title', title: "Create Book" %>
+<%= render "form" %>
