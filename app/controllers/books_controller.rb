@@ -15,7 +15,7 @@ class BooksController < ApplicationController
 
 	def create
 		@book = Book.new(book_params)
-		@book.author = Author.find(1)
+		@book.author = Author.find(@book.author_id)
 
 		if @book.save
 			flash[:success] = "Book was created successfully"
@@ -47,6 +47,6 @@ class BooksController < ApplicationController
 
 	private
 		def book_params
-			params.require(:book).permit(:name, :description)
+			params.require(:book).permit(:name, :description, :author_id)
 		end
 end

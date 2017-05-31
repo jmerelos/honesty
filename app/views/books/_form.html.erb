@@ -8,6 +8,11 @@
 			<%= f.label :description %>
 			<%= f.text_area :description, rows: 10 %>
 
+			<div class="field">
+		    <%= f.label :author %><br>
+		    <%= f.collection_select :author_id, Author.all, :id, :name %>
+		  </div>
+
 			<%= f.submit(@book.new_record? ? 'Create Book' : 'Edit Book', class: "btn btn-success") %>
 		<% end %>	
 	</div>
