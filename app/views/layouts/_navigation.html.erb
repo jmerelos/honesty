@@ -1,11 +1,21 @@
 <header class="navbar navbar-fixed-top navbar-default">
   <div class="container">
-    <div class="nav_item"><%= link_to "Home", home_path %></div>
-     <div class="nav_item"><%= link_to "Books Listing", books_path %></div>    
+    <%= link_to "Home", home_path, class: "nav_item" %>  
+    <ul class="nav_item">
+      <li class="dropdown">
+        <%= link_to '#', class: "dropdown-toggle", "data-toggle" => "dropdown" do %>
+        Modules <b class="caret"></b>
+      <% end %>
+      <ul class="dropdown-menu">
+        <li><%= link_to "Books Listing", books_path %></li>
+        <% if logged_in? %><li><%= link_to "Add Book", new_book_path %></li><% end %>
+        <li class="divider"></li>
+        <li><%= link_to "Authors Listing", authors_path %></li>
+        <% if logged_in? %><li><%= link_to "Add Author", new_author_path %></li><% end %>
+      </ul>
+      </li>
+    </ul>
     <% if logged_in? %>
-      <div class="nav_item">
-        <%= link_to "Add Book", new_book_path %>
-      </div> 
       <div class="nav_item dropdown pull-right">
         <ul class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
           <%= link_to current_user.name %>
@@ -15,11 +25,9 @@
           <li><%= link_to "Logout", logout_path %></li>
         </ul>
     </div>
-
     <% else %>
       <div class="nav_item">
         <%= link_to "Login", login_path %>
       </div>
     <% end %>
-  </div>
 </header>

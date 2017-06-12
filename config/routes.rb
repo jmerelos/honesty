@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 #  delete '/books/:id', to: 'books#destroy'
 
   resources :books
+  resources :authors
 
   get '/login', to: 'logins#new'
   post 'login', to: 'logins#create'

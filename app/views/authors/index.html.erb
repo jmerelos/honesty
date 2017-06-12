@@ -1,0 +1,25 @@
+<div class="container">
+  <h2 class="center">Authors Listing</h2>      
+  <table class="table" style='table-layout:fixed;'>
+    <thead>
+      <tr>
+        <th class="center">Author Name</th>
+        <th class="center">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @authors.each do |author| %>
+      <tr class="center">
+        <td><%= author.name %></td>
+        <td>
+					<%= link_to "View Books", author_path(author) %>
+          <% if logged_in? %>
+  					| <%= link_to "Edit", edit_author_path(author) %>
+  					| <%= link_to "Delete", author, method: :delete, data: {confirm: "Are you sure?"} %>
+            <% end %>
+        </td>
+      </tr>
+    <% end %>  
+    </tbody>
+  </table>
+</div>

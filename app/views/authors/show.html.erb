@@ -1,10 +1,9 @@
 <div class="container">
-  <h2 class="center">Books Listing</h2>      
+  <h2 class="center"><%= "Books of " + @author.name %></h2> 
   <table class="table" style='table-layout:fixed;'>
     <thead>
       <tr>
         <th class="center">Book Name</th>
-        <th class="center">Author</th>
         <th class="center">Action</th>
       </tr>
     </thead>
@@ -12,12 +11,11 @@
     <% @books.each do |book| %>
       <tr class="center">
         <td><%= book.name %></td>
-        <td><%= book.author.name %></td>
         <td>
-					<%= link_to "View", book_path(book) %>
+          <%= link_to "View", book_path(book) %>
           <% if logged_in? %>
-  					| <%= link_to "Edit", edit_book_path(book) %>
-  					| <%= link_to "Delete", book, method: :delete, data: {confirm: "Are you sure?"} %>
+            | <%= link_to "Edit", edit_book_path(book) %>
+            | <%= link_to "Delete", book, method: :delete, data: {confirm: "Are you sure?"} %>
             <% end %>
         </td>
       </tr>
