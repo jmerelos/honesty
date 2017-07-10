@@ -16,6 +16,17 @@
       </li>
     </ul>
     <% if logged_in? %>
+      <ul class="nav_item">
+        <li class="dropdown">
+          <%= link_to '#', class: "dropdown-toggle", "data-toggle" => "dropdown" do %>
+          Issue Books <b class="caret"></b>
+        <% end %>
+        <ul class="dropdown-menu">
+          <li><%= link_to "Books Issued Listing", "" %></li>
+          <li><%= link_to "Borrow Book", "" %></li>
+        </ul>
+        </li>
+      </ul>
       <div class="nav_item dropdown pull-right">
         <ul class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
           <%= link_to current_user.name %>
