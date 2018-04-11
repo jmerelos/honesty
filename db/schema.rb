@@ -12,29 +12,29 @@
 
 ActiveRecord::Schema.define(version: 20170622043556) do
 
-  create_table "authors", force: :cascade do |t|
+  create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "books", force: :cascade do |t|
+  create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.integer  "author_id"
     t.boolean  "available"
   end
 
-  create_table "borrowers", force: :cascade do |t|
+  create_table "borrowers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
